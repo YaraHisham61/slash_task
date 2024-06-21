@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:slash/components/custom_text.dart';
 import 'package:slash/models/category_model.dart';
 
@@ -16,7 +17,7 @@ class CategoryContainer extends StatelessWidget {
           CircleAvatar(
             backgroundColor: Colors.black87,
             radius: 35,
-            child: Icon(
+            child: FaIcon(
               color: Colors.white,
               category.icon,
               size: 30,

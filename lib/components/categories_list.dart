@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:slash/components/category_container.dart';
 import 'package:slash/components/custom_heading.dart';
 import 'package:slash/models/category_model.dart';
@@ -9,15 +10,38 @@ class CategoriesList extends StatelessWidget {
   });
 
   final List<CategoryModel> categories = [
-    CategoryModel(name: "Fashion", icon: Icons.abc),
-    CategoryModel(name: "Games", icon: Icons.abc),
-    CategoryModel(name: "Accessories", icon: Icons.abc),
-    CategoryModel(name: "Books", icon: Icons.abc),
-    CategoryModel(name: "Books", icon: Icons.abc),
-    CategoryModel(name: "Books", icon: Icons.abc),
-    CategoryModel(name: "Books", icon: Icons.abc),
-    CategoryModel(name: "Books", icon: Icons.abc),
-    CategoryModel(name: "Books", icon: Icons.abc),
+    CategoryModel(
+      name: "Fashion",
+      icon: FontAwesomeIcons.shirt,
+    ),
+    CategoryModel(
+      name: "Games",
+      icon: FontAwesomeIcons.diceFive,
+    ),
+    CategoryModel(
+      name: "Accessories",
+      icon: FontAwesomeIcons.glasses,
+    ),
+    CategoryModel(
+      name: "Books",
+      icon: FontAwesomeIcons.book,
+    ),
+    CategoryModel(
+      name: "Fashion",
+      icon: FontAwesomeIcons.shirt,
+    ),
+    CategoryModel(
+      name: "Games",
+      icon: FontAwesomeIcons.diceFive,
+    ),
+    CategoryModel(
+      name: "Accessories",
+      icon: FontAwesomeIcons.glasses,
+    ),
+    CategoryModel(
+      name: "Books",
+      icon: FontAwesomeIcons.book,
+    ),
   ];
 
   @override

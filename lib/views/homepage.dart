@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:slash/components/bestselling_list.dart';
 import 'package:slash/components/categories_list.dart';
 import 'package:slash/components/custom_text.dart';
+import 'package:slash/components/image_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -72,11 +73,8 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Center(
-          child: Container(
-            constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width * 0.9,
-              minWidth: MediaQuery.of(context).size.width * 0.9,
-            ),
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -119,18 +117,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.25,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/general.jpg',
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
+                  child: ImageSlider(),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0),
