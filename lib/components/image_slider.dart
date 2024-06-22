@@ -13,8 +13,8 @@ class _ImageSliderState extends State<ImageSlider> {
   final CarouselController _controller = CarouselController();
 
   final List<String> imgList = [
-    'assets/blackFriday.png',
-    'assets/offers.jpg',
+    'assets/images/blackFriday.png',
+    'assets/images/offers.jpg',
   ];
 
   @override

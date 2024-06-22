@@ -7,9 +7,75 @@ import 'package:slash/models/category_model.dart';
 class CategoriesList extends StatelessWidget {
   CategoriesList({
     super.key,
+    this.isWeb = false,
   });
+  final bool isWeb;
 
   final List<CategoryModel> categories = [
+    CategoryModel(
+      name: "Fashion",
+      icon: FontAwesomeIcons.shirt,
+    ),
+    CategoryModel(
+      name: "Games",
+      icon: FontAwesomeIcons.diceFive,
+    ),
+    CategoryModel(
+      name: "Accessories",
+      icon: FontAwesomeIcons.glasses,
+    ),
+    CategoryModel(
+      name: "Books",
+      icon: FontAwesomeIcons.book,
+    ),
+    CategoryModel(
+      name: "Fashion",
+      icon: FontAwesomeIcons.shirt,
+    ),
+    CategoryModel(
+      name: "Games",
+      icon: FontAwesomeIcons.diceFive,
+    ),
+    CategoryModel(
+      name: "Accessories",
+      icon: FontAwesomeIcons.glasses,
+    ),
+    CategoryModel(
+      name: "Books",
+      icon: FontAwesomeIcons.book,
+    ),
+    CategoryModel(
+      name: "Fashion",
+      icon: FontAwesomeIcons.shirt,
+    ),
+    CategoryModel(
+      name: "Games",
+      icon: FontAwesomeIcons.diceFive,
+    ),
+    CategoryModel(
+      name: "Accessories",
+      icon: FontAwesomeIcons.glasses,
+    ),
+    CategoryModel(
+      name: "Books",
+      icon: FontAwesomeIcons.book,
+    ),
+    CategoryModel(
+      name: "Fashion",
+      icon: FontAwesomeIcons.shirt,
+    ),
+    CategoryModel(
+      name: "Games",
+      icon: FontAwesomeIcons.diceFive,
+    ),
+    CategoryModel(
+      name: "Accessories",
+      icon: FontAwesomeIcons.glasses,
+    ),
+    CategoryModel(
+      name: "Books",
+      icon: FontAwesomeIcons.book,
+    ),
     CategoryModel(
       name: "Fashion",
       icon: FontAwesomeIcons.shirt,
@@ -50,8 +116,9 @@ class CategoriesList extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const CustomHeading(
+        CustomHeading(
           text: "Categories",
+          isWeb: isWeb,
         ),
         ConstrainedBox(
           constraints: BoxConstraints(

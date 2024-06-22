@@ -14,58 +14,66 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.white,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          CustomText(
-            text: "Slash.",
-            weight: FontWeight.w700,
-            size: isWeb ? 30 : 20,
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 2.0),
-                child: Icon(
-                  FontAwesomeIcons.locationDot,
-                  color: Colors.black,
-                  size: isWeb ? 30 : null,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomText(
-                    text: "Nasr City",
-                    size: isWeb ? 20 : 16,
-                    color: Colors.black87,
-                  ),
-                  CustomText(
-                    text: "Cairo",
-                    weight: FontWeight.w600,
-                    size: isWeb ? 20 : 16,
-                  ),
-                ],
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  FontAwesomeIcons.angleDown,
-                  color: Colors.black,
-                ),
-              ),
-            ],
-          ),
-          IconButton(
-            padding: EdgeInsets.zero,
-            onPressed: () {},
-            icon: Icon(
-              FontAwesomeIcons.bell,
-              color: Colors.black,
-              size: isWeb ? 35 : 30,
+      title: Padding(
+        padding: isWeb
+            ? const EdgeInsets.symmetric(vertical: 10.0)
+            : const EdgeInsets.all(0.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CustomText(
+              text: "Slash.",
+              weight: FontWeight.w700,
+              size: isWeb ? 30 : 20,
             ),
-          ),
-        ],
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 2.0),
+                  child: Icon(
+                    FontAwesomeIcons.locationDot,
+                    color: Colors.black,
+                    size: isWeb ? 30 : null,
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      text: "Nasr City",
+                      size: isWeb ? 20 : 16,
+                      color: Colors.black87,
+                    ),
+                    CustomText(
+                      text: "Cairo",
+                      weight: FontWeight.w600,
+                      size: isWeb ? 20 : 16,
+                    ),
+                  ],
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    FontAwesomeIcons.angleDown,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+            IconButton(
+              padding: EdgeInsets.zero,
+              onPressed: () {},
+              icon: Badge(
+                smallSize: 13.0,
+                child: Icon(
+                  FontAwesomeIcons.bell,
+                  color: Colors.black,
+                  size: isWeb ? 35 : 30,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

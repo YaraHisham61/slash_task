@@ -13,9 +13,7 @@ class CustomTextField extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          width: isWeb
-              ? MediaQuery.of(context).size.width * 0.75
-              : MediaQuery.of(context).size.width * 0.7,
+          width: MediaQuery.of(context).size.width * 0.75,
           child: Padding(
             padding: EdgeInsets.only(
               right: MediaQuery.of(context).size.width * 0.01,
