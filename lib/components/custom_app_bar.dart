@@ -5,7 +5,9 @@ import 'package:slash/components/custom_text.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
+    this.isWeb = false,
   });
+  final bool isWeb;
 
   @override
   Widget build(BuildContext context) {
@@ -15,32 +17,33 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const CustomText(
+          CustomText(
             text: "Slash.",
             weight: FontWeight.w700,
-            size: 20,
+            size: isWeb ? 30 : 20,
           ),
           Row(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(right: 2.0),
+              Padding(
+                padding: const EdgeInsets.only(right: 2.0),
                 child: Icon(
                   FontAwesomeIcons.locationDot,
                   color: Colors.black,
+                  size: isWeb ? 30 : null,
                 ),
               ),
-              const Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    text: "Maadi",
-                    size: 16,
+                    text: "Nasr City",
+                    size: isWeb ? 20 : 16,
                     color: Colors.black87,
                   ),
                   CustomText(
                     text: "Cairo",
                     weight: FontWeight.w600,
-                    size: 16,
+                    size: isWeb ? 20 : 16,
                   ),
                 ],
               ),
@@ -56,10 +59,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           IconButton(
             padding: EdgeInsets.zero,
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               FontAwesomeIcons.bell,
               color: Colors.black,
-              size: 30,
+              size: isWeb ? 35 : 30,
             ),
           ),
         ],

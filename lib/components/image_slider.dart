@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class ImageSlider extends StatefulWidget {
-  const ImageSlider({super.key});
-
+  const ImageSlider({super.key, this.isWeb = false});
+  final bool isWeb;
   @override
   State<ImageSlider> createState() => _ImageSliderState();
 }
@@ -26,6 +26,9 @@ class _ImageSliderState extends State<ImageSlider> {
           options: CarouselOptions(
             enlargeCenterPage: true,
             enableInfiniteScroll: false,
+            height: widget.isWeb
+                ? MediaQuery.of(context).size.height * 0.3
+                : MediaQuery.of(context).size.height * 0.2,
             onPageChanged: (index, reason) {
               setState(() {
                 _current = index;
@@ -44,7 +47,7 @@ class _ImageSliderState extends State<ImageSlider> {
           },
         ),
         Row(
-   mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: imgList.asMap().entries.map(
             (entry) {
               bool isActive = _current == entry.key;
@@ -61,7 +64,7 @@ class _ImageSliderState extends State<ImageSlider> {
                     color: (Theme.of(context).brightness == Brightness.dark
                             ? Colors.white
                             : Colors.black)
-                        .withOpacity(isActive ? 0.9 : 0.4),
+                        .withOpacity(isActive ? 0.9 : 0.2),
                   ),
                 ),
               );
