@@ -1,5 +1,3 @@
-// ignore_for_file: prefer__ructors, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash/components/products_list.dart';
@@ -16,7 +14,7 @@ import 'package:slash/cubits/get_recommended_cubit/get_recommended_cubit.dart';
 import 'package:slash/cubits/get_recommended_cubit/get_recommended_states.dart';
 
 class HomeScreenMobile extends StatefulWidget {
-  HomeScreenMobile({super.key});
+  const HomeScreenMobile({super.key});
 
   @override
   State<HomeScreenMobile> createState() => _HomeScreenMobileState();
@@ -32,7 +30,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       length: 4,
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: CustomAppBar(),
+        appBar: const CustomAppBar(),
         body: SingleChildScrollView(
           child: Center(
             child: SizedBox(
@@ -41,12 +39,12 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 8.0),
                     child: CustomTextField(),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15.0),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 15.0),
                     child: ImageSlider(),
                   ),
                   Padding(
@@ -109,7 +107,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             ),
           ),
         ),
-        bottomNavigationBar: CustomNavigationBar(),
+        bottomNavigationBar: const CustomNavigationBar(),
       ),
     );
   }

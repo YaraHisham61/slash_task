@@ -36,7 +36,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
       indicator: TopIndicator(),
       tabs: <Widget>[
         Tab(
-          icon: Icon(
+          icon: const Icon(
             FontAwesomeIcons.house,
             color: Colors.black,
           ),
@@ -48,7 +48,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
           ),
         ),
         Tab(
-          icon: Icon(
+          icon: const Icon(
             FontAwesomeIcons.heart,
             color: Colors.black,
           ),
@@ -60,7 +60,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
           ),
         ),
         Tab(
-          icon: Icon(
+          icon: const Icon(
             FontAwesomeIcons.cartShopping,
             color: Colors.black,
           ),
@@ -72,7 +72,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
           ),
         ),
         Tab(
-          icon: Icon(
+          icon: const Icon(
             FontAwesomeIcons.circleUser,
             color: Colors.black,
           ),
