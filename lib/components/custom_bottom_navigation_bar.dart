@@ -3,36 +3,35 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:slash/components/custom_text.dart';
 
 class CustomNavigationBar extends StatefulWidget {
-  const CustomNavigationBar({
-    super.key,
-  });
+  final TabController tabController;
+
+  const CustomNavigationBar({super.key, required this.tabController});
 
   @override
   State<CustomNavigationBar> createState() => _CustomNavigationBarState();
 }
 
-class _CustomNavigationBarState extends State<CustomNavigationBar>
-    with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+class _CustomNavigationBarState extends State<CustomNavigationBar> {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
-    _tabController.addListener(() {
-      setState(() {});
+    widget.tabController.addListener(() {
+      setState(() {}); // Trigger rebuild when tab changes
     });
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
+    widget.tabController.removeListener(() {
+      setState(() {});
+    });
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      controller: _tabController,
+      controller: widget.tabController,
       indicator: TopIndicator(),
       tabs: <Widget>[
         Tab(
@@ -42,9 +41,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
           ),
           child: CustomText(
             text: "Home",
-            color: _tabController.index == 0 ? Colors.black : Colors.black87,
-            weight:
-                _tabController.index == 0 ? FontWeight.w600 : FontWeight.w400,
+            color:
+                widget.tabController.index == 0 ? Colors.black : Colors.black87,
+            weight: widget.tabController.index == 0
+                ? FontWeight.w600
+                : FontWeight.w400,
           ),
         ),
         Tab(
@@ -54,9 +55,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
           ),
           child: CustomText(
             text: "Favorites",
-            color: _tabController.index == 1 ? Colors.black : Colors.black87,
-            weight:
-                _tabController.index == 1 ? FontWeight.w600 : FontWeight.w400,
+            color:
+                widget.tabController.index == 1 ? Colors.black : Colors.black87,
+            weight: widget.tabController.index == 1
+                ? FontWeight.w600
+                : FontWeight.w400,
           ),
         ),
         Tab(
@@ -66,9 +69,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
           ),
           child: CustomText(
             text: "My Cart",
-            color: _tabController.index == 2 ? Colors.black : Colors.black87,
-            weight:
-                _tabController.index == 2 ? FontWeight.w600 : FontWeight.w400,
+            color:
+                widget.tabController.index == 2 ? Colors.black : Colors.black87,
+            weight: widget.tabController.index == 2
+                ? FontWeight.w600
+                : FontWeight.w400,
           ),
         ),
         Tab(
@@ -78,9 +83,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar>
           ),
           child: CustomText(
             text: "Profile",
-            color: _tabController.index == 3 ? Colors.black : Colors.black87,
-            weight:
-                _tabController.index == 3 ? FontWeight.w600 : FontWeight.w400,
+            color:
+                widget.tabController.index == 3 ? Colors.black : Colors.black87,
+            weight: widget.tabController.index == 3
+                ? FontWeight.w600
+                : FontWeight.w400,
           ),
         ),
       ],
